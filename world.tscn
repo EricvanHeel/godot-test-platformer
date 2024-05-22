@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpk7m5f76g1uj"]
+
+[ext_resource type="PackedScene" uid="uid://cbb7j7wjmc5ry" path="res://scenes/buildings/tavern.tscn" id="1_d0p6n"]
+[ext_resource type="PackedScene" uid="uid://cfoa46hhkceac" path="res://scenes/character/character.tscn" id="3_inhmy"]
+
+[node name="World" type="Node2D"]
+
+[node name="Tavern" parent="." instance=ExtResource("1_d0p6n")]
+
+[node name="Node2D" parent="." instance=ExtResource("3_inhmy")]
+position = Vector2(96, 94)
