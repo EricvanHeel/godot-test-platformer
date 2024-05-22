@@ -49,25 +49,25 @@ godot-test-platformer
     ...
 ```
 ### `assets` Folder
-Used to store various assets used by the game. Files should follow camel case structure. Ex. `tavern_tile_map.png`
+Used to store various assets used by the game. Files should follow snake case structure. Ex. `tavern_tile_map.png`
 
 Subfolders may be used under `fonts`, `images`, `sounds`, etc. to group assets of a particular scene
 
 ### `scenes` Folder
 Individual scense should live under a subfolder in the `scenes` folder. This subfolder can either be specific to a single scene (for example "character") or can be used to group similar types of scenes together (for exmaple "buildings")
 
-Scenes should be named all lower case and their file names should be camel case. Ex. `town_center.tscn`
+Scenes should be named all lower case and their file names should be snake case. Ex. `town_center.tscn`
 
 Extended Godot scripts should be places in the same directory as the scene they are used in. For example, the "character" subfolder should contain the actual scene file `character.tscn` and any custom Godot scripts used within the nodes of that scene; `character.gd`
 
 ## Godot Script Naming Conventions
-Godot script names should follow camel case, `player_camera.gd`
+Godot script names should follow snake case, `player_camera.gd`
 
-Constants should be all caps camel case, `const MOVE_SPEED: float = 150`
+Constants should be all caps snake case, `const MOVE_SPEED: float = 150`
 
-Variables should be all lower camel case, `var new_velocity: Vector2 = velocity`
+Variables should be all lower snake case, `var new_velocity: Vector2 = velocity`
 
-Functions should be all lower camel case, `func do_something_cool()`
+Functions should be all lower snake case, `func do_something_cool()`
 
 Private functions (functions that are only called from within the script/class they are defined) should begin with a leading underscore "_", `func _process(delta: float)`
 
