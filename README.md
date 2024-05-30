@@ -17,7 +17,11 @@ To clone this project to you local machine, follow these steps:
 - Then create your own branch off of `main` by running:
   - `git checkout -b {your-branch-name}`
 
+- If you already have a local branch you're working on, verify you are on that branch by running:
+  - `git branch`
+
 - You can now make any changes or additions to the project under this branch. Once you want to merge your changes back into `main` run the following commands:
+  - `cd {project/directory/location/godot-test-platformer}`
   - `git add .`
   - `git commit -m "{put some message here}"`
   - `git push origin {your-branch-name}`
@@ -42,11 +46,11 @@ godot-test-platformer
 │   ...
 │
 └── scenes
-    |
-    └── buildings
-    |
-    └── character
-    ...
+	|
+	└── buildings
+	|
+	└── character
+	...
 ```
 ### `assets` Folder
 Used to store various assets used by the game. Files should follow snake case structure. Ex. `tavern_tile_map.png`
@@ -61,6 +65,8 @@ Scenes should be named all lower case and their file names should be snake case.
 Extended Godot scripts should be places in the same directory as the scene they are used in. For example, the "character" subfolder should contain the actual scene file `character.tscn` and any custom Godot scripts used within the nodes of that scene; `character.gd`
 
 ## Godot Script Naming Conventions
+Nodes and Class Names should be named in camel case, like MyCustomNode
+
 Godot script names should follow snake case, `player_camera.gd`
 
 Constants should be all caps snake case, `const MOVE_SPEED: float = 150`
@@ -74,5 +80,5 @@ Private functions (functions that are only called from within the script/class t
 All variables, parameters and functions should have type annotations.
   - Variables/Constants: `const MOVE_SPEED: float = 150`
   - Function Parameters & Return types: 
-    - `func _process(delta: float) -> void:`
-    - `func add_two_numbers(first: int, second: int) -> int:`
+	- `func _process(delta: float) -> void:`
+	- `func add_two_numbers(first: int, second: int) -> int:`
