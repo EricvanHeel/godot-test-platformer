@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://scenes/character/character.gd" id="1_adr2u"]
 [ext_resource type="Texture2D" uid="uid://n0xm07oamu7n" path="res://assets/images/oak_woods_v1.0/character/char_blue.png" id="2_bf15v"]
 [ext_resource type="Script" path="res://General Scripts/FSM.gd" id="3_smeg0"]
-[ext_resource type="Script" path="res://scenes/character/player_idle.gd" id="4_5s6hc"]
-[ext_resource type="Script" path="res://scenes/character/player_running.gd" id="5_3ebxh"]
-[ext_resource type="Script" path="res://scenes/character/player_jumping.gd" id="6_omtaf"]
-[ext_resource type="Script" path="res://scenes/character/player_falling.gd" id="7_rpwys"]
-[ext_resource type="Script" path="res://scenes/character/player_attacking.gd" id="8_mfpmx"]
+[ext_resource type="Script" path="res://scenes/character/PlayerIdle.gd" id="4_5s6hc"]
+[ext_resource type="Script" path="res://scenes/character/PlayerRunning.gd" id="5_3ebxh"]
+[ext_resource type="Script" path="res://scenes/character/PlayerJumping.gd" id="6_omtaf"]
+[ext_resource type="Script" path="res://scenes/character/PlayerFalling.gd" id="7_rpwys"]
+[ext_resource type="Script" path="res://scenes/character/PlayerAttacking.gd" id="8_mfpmx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_njo8s"]
 radius = 9.0
@@ -97,8 +97,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_flq00"]
 resource_name = "jump_end"
-length = 0.6
-step = 0.2
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -106,7 +105,7 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
+"times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [37, 38, 39]
@@ -114,8 +113,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_dxbva"]
 resource_name = "jump_transition"
-length = 0.6
-step = 0.2
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -123,7 +121,7 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
+"times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [30, 31, 32]
@@ -218,29 +216,29 @@ libraries = {
 
 [node name="FSM" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_smeg0")
-initial_state = NodePath("player_idle")
+initial_state = NodePath("PlayerIdle")
 
-[node name="player_idle" type="Node" parent="FSM" node_paths=PackedStringArray("actor", "animation")]
+[node name="PlayerIdle" type="Node" parent="FSM" node_paths=PackedStringArray("actor", "animation")]
 script = ExtResource("4_5s6hc")
 actor = NodePath("../..")
 animation = NodePath("../../Sprite2D/AnimationPlayer")
 
-[node name="player_running" type="Node" parent="FSM" node_paths=PackedStringArray("actor", "animation")]
+[node name="PlayerRunning" type="Node" parent="FSM" node_paths=PackedStringArray("actor", "animation")]
 script = ExtResource("5_3ebxh")
 actor = NodePath("../..")
 animation = NodePath("../../Sprite2D/AnimationPlayer")
 
-[node name="player_jumping" type="Node" parent="FSM" node_paths=PackedStringArray("actor", "animation")]
+[node name="PlayerJumping" type="Node" parent="FSM" node_paths=PackedStringArray("actor", "animation")]
 script = ExtResource("6_omtaf")
 actor = NodePath("../..")
 animation = NodePath("../../Sprite2D/AnimationPlayer")
 
-[node name="player_falling" type="Node" parent="FSM" node_paths=PackedStringArray("actor", "animation")]
+[node name="PlayerFalling" type="Node" parent="FSM" node_paths=PackedStringArray("actor", "animation")]
 script = ExtResource("7_rpwys")
 actor = NodePath("../..")
 animation = NodePath("../../Sprite2D/AnimationPlayer")
 
-[node name="player_attacking" type="Node" parent="FSM" node_paths=PackedStringArray("actor", "animation")]
+[node name="PlayerAttacking" type="Node" parent="FSM" node_paths=PackedStringArray("actor", "animation")]
 script = ExtResource("8_mfpmx")
 actor = NodePath("../..")
 animation = NodePath("../../Sprite2D/AnimationPlayer")

@@ -1,4 +1,4 @@
-class_name player_jumping
+class_name PlayerAttacking
 extends State
 
 @export var actor : player
@@ -9,14 +9,11 @@ func ready():
 	pass
 
 func state_enter():
-	animation.play("jump")
+	animation.play("swing")
 	
 func state_process(delta):
-	if actor.velocity.y > 0:
-		Transitioned.emit(self,"player_falling")
-func state_physics_process(delta):
-	animation.play("jump_up")
-	
-func state_exit():
-	pass
+	if animation.is_playing() == false:
+		Transitioned.emit(self, "PlayerIdle")
 
+func state_physics_process(delta):
+	pass
