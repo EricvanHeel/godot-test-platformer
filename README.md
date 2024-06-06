@@ -53,6 +53,32 @@ Switched to branch 'renaming_2'
 
 - You can then go to the GitHub repo in your browser and open up a Pull Request from your branch into `main`
 
+### Checking Out Someone Else's Branch
+Suppose someone else pushed a branch and you want to run the project on that branch on your local machine.
+
+- Run `git fetch` so your local machine has all updateded references of all remote branches
+
+- Run `git branch -r` to see all remote branches and identify the branch you want to switch to
+```
+C:\Users\Eric\Documents\Godot Projects\platformer>git branch -r
+  origin/Renaming
+  origin/add-readme
+  origin/char-animations
+  origin/initial_commit
+  origin/main
+  origin/renaming_2
+```
+
+- Run `git checkout origin/{branch-name}` to change your local ref to that branch
+
+- Then run `git switch -c {branch-name}` to create a new local branch on your machine referencing that remote branch
+```
+C:\Users\Eric\Documents\Godot Projects\platformer>git switch -c Renaming
+Switched to a new branch 'Renaming'
+```
+
+- Your local project will now run on the code for that branch. You can also commit and push to that branch as well.
+
 ## Project Organization
 Project organization, naming nconventions and best practices are defined here to keep everything organized and consistent.
 Godot has it's own [style guide reference](https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_styleguide.html) which we'll try to follow
