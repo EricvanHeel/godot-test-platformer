@@ -4,52 +4,89 @@ Testing development of a Godot 2D platformer
 This project was initialized and developed using version **4.2.1** of Godot
 
 ## Git Operations
-To clone this project to you local machine, follow these steps:
+For all git operations, make sure you are running the commands at the root of the project on your local machine:
+
+`cd {project/directory/location/godot-test-platformer}`
+
+### Cloning
+You only need to clone once to initialize the project on your local machine.
+To clone this project to you local machine:
 
 - Create a new [GitHub Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) and copy it locally (you can give the token full permissions)
 
 - Open a terminal in the location on your local machine where you wish to keep the project and ruin the following to clone it there:
   - `git clone https://{YOUR_GITHUB_USERNAME}:{YOUR_GITHUB_TOKEN}@github.com/EricvanHeel/godot-test-platformer.git`
 
+- Run `git branch` and you should see output similar to this:
+```
+C:\Users\Eric\Documents\Godot Projects\platformer>git branch
+* main
+```
+
+### Creating a New Branch
+Using branches ensures your changes won't get intertwined with someone else's.
+To create a new branch:
 - Ensure you are on the `main` branch by running:
   - `git checkout main`
 
 - Then create your own branch off of `main` by running:
   - `git checkout -b {your-branch-name}`
 
-- If you already have a local branch you're working on, verify you are on that branch by running:
-  - `git branch`
+### Committing and Pushing Changes on your Branch
+- Run `git branch` to ensure you are on the right branch you want to commit and push to. It should look like this:
+```
+C:\Users\Eric\Documents\Godot Projects\platformer>git branch
+  main
+* renaming_2
+```
 
-- You can now make any changes or additions to the project under this branch. Once you want to merge your changes back into `main` run the following commands:
-  - `cd {project/directory/location/godot-test-platformer}`
+- If you are still on the `main` branch, but see your branch exists, run `git checkout {your-branch-name}` to switch to your branch.
+```
+C:\Users\Eric\Documents\Godot Projects\platformer>git checkout renaming_2
+Switched to branch 'renaming_2'
+```
+
+- You can now make any changes or additions to the project under your branch. Once you want to merge your changes back into `main` run the following commands:
   - `git add .`
   - `git commit -m "{put some message here}"`
   - `git push origin {your-branch-name}`
 
-- You can then go to the GitHub repo in your browser and open up na Pull Request from your branch into `main`
+- You can then go to the GitHub repo in your browser and open up a Pull Request from your branch into `main`
 
 ## Project Organization
 Project organization, naming nconventions and best practices are defined here to keep everything organized and consistent.
+Godot has it's own [style guide reference](https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_styleguide.html) which we'll try to follow
 
 ### Directory Structure
-
+Example:
 ```
-godot-test-platformer
+/godot-test-platformer
 │   
-└── assets
+└── /assets
 |   |
-│   └── fonts
+│   └── /fonts
 |   |
-│   └── images
+│   └── /images
 |   |
-│   └── sounds
+│   └── /sounds
 │   ...
 │
-└── scenes
+└── /common_scripts
+|   |
+│   └── finite_state_machine.gd
+|   |
+│   └── state.gd
+│   ...
+│
+└── /scenes
 	|
-	└── buildings
+	└── /buildings
 	|
-	└── character
+	└── /player
+      |
+      └── player.gd
+      |
+      └── player.tscn
 	...
 ```
 ### `assets` Folder
@@ -65,7 +102,7 @@ Scenes should be named all lower case and their file names should be snake case.
 Extended Godot scripts should be places in the same directory as the scene they are used in. For example, the "character" subfolder should contain the actual scene file `character.tscn` and any custom Godot scripts used within the nodes of that scene; `character.gd`
 
 ## Godot Script Naming Conventions
-Nodes and Class Names should be named in camel case, like MyCustomNode
+Nodes and Class Names should be named in camel case, like `MyCustomNode` or `MyCustomClass`
 
 Godot script names should follow snake case, `player_camera.gd`
 

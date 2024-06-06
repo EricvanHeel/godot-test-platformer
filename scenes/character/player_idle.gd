@@ -4,18 +4,14 @@ extends State
 @export var actor: Player
 @export var animation: AnimationPlayer
 
-
-func ready():
-	pass
-
-func state_enter():
+func state_enter() -> void:
 	animation.play("idle")
 #	if actor.saved_direction.x < 0:
 #		animation.play("idle_left")
 #	elif actor.saved_direction.x > 0:
 #		animation.play("idle_right")
 
-func state_process(delta):
+func state_process(delta: float) -> void:
 	if Input.is_action_pressed("left") or Input.is_action_pressed("right"):
 		transitioned.emit(self, "PlayerRunning")
 	if Input.is_action_just_pressed("attack"):
@@ -23,5 +19,5 @@ func state_process(delta):
 	if Input.is_action_just_pressed("jump"):
 		transitioned.emit(self, "PlayerJumping")
 
-func state_physics_process(delta):
+func state_physics_process(delta: float) -> void:
 	pass
