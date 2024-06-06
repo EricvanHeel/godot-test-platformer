@@ -1,18 +1,17 @@
 class_name FSM
 extends Node
 
-#The Finite State Machine (FSM) script can be attached to a basic node and must be included as a parent of the states
-#The FSM node must be a part of the scene in which you want a state machine
+# The Finite State Machine (FSM) script can be attached to a basic node and must be included as a parent of the states
+# The FSM node must be a part of the scene in which you want a state machine
 @export var initial_state : State
 var current_state : State
 var states : Dictionary = {}
-
 
 func _ready():
 	for child in get_children():
 		if child is State:
 			states[child.name.to_lower()] = child
-			child.Transitioned.connect(on_child_transition)
+			child.transitioned.connect(on_child_transition)
 
 	if initial_state:
 		initial_state.state_enter()
@@ -22,6 +21,7 @@ func _process(delta):
 	if current_state :
 		current_state.state_process(delta)
 	print(current_state)
+
 func _physics_process(delta):
 	if current_state :
 		current_state.state_physics_process(delta)

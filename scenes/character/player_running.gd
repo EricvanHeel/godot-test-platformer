@@ -1,8 +1,8 @@
-class_name player_running
+class_name PlayerRunning
 extends State
 
-@export var actor : player
-@export var animation : AnimationPlayer
+@export var actor: Player
+@export var animation: AnimationPlayer
 
 
 func ready():
@@ -13,11 +13,11 @@ func state_enter():
 	pass
 func state_process(delta):
 	if actor.velocity == Vector2.ZERO:
-		Transitioned.emit(self,"player_idle")
+		transitioned.emit(self,"PlayerIdle")
 	if Input.is_action_just_pressed("attack"):
-		Transitioned.emit(self,"player_attacking")
+		transitioned.emit(self,"PlayerAttacking")
 	if Input.is_action_just_pressed("jump"):
-		Transitioned.emit(self,"player_jumping")
+		transitioned.emit(self,"PlayerJumping")
 
 func state_physics_process(delta):
 	pass

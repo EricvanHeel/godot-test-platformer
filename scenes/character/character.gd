@@ -1,14 +1,14 @@
-class_name player
+class_name Player
 extends CharacterBody2D
 
 const move_speed: float = 150
 const jump_velocity: float = 400
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-@export var sprite : Sprite2D
-@export var animation : AnimationPlayer
-@export var direction : Vector2 = Vector2.ZERO
-@export var saved_direction : Vector2
+@export var sprite: Sprite2D
+@export var animation: AnimationPlayer
+@export var direction: Vector2 = Vector2.ZERO
+@export var saved_direction: Vector2
 
 # properties for falling through platforms on collision layer 2
 # reference: https://godotforums.org/d/37343-how-can-i-make-my-player-fall-through-a-one-way-platform-with-an-input/2
@@ -24,7 +24,7 @@ func _process(delta):
 	direction = Input.get_vector("left", "right", "jump", "crouch")
 	if direction != Vector2.ZERO:
 		saved_direction = direction
-		
+
 	if saved_direction.x < 0:
 		sprite.flip_h = true
 	elif saved_direction.x > 0:

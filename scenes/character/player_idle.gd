@@ -1,8 +1,8 @@
+class_name PlayerIdle
 extends State
-class_name player_idle
 
-@export var actor : player
-@export var animation : AnimationPlayer
+@export var actor: Player
+@export var animation: AnimationPlayer
 
 
 func ready():
@@ -17,11 +17,11 @@ func state_enter():
 
 func state_process(delta):
 	if Input.is_action_pressed("left") or Input.is_action_pressed("right"):
-		Transitioned.emit(self, "player_running")
+		transitioned.emit(self, "PlayerRunning")
 	if Input.is_action_just_pressed("attack"):
-		Transitioned.emit(self,"player_attacking")
+		transitioned.emit(self, "PlayerAttacking")
 	if Input.is_action_just_pressed("jump"):
-		Transitioned.emit(self,"player_jumping")
+		transitioned.emit(self, "PlayerJumping")
 
 func state_physics_process(delta):
 	pass

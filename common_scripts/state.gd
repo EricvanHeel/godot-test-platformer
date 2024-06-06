@@ -1,9 +1,9 @@
-extends Node
 class_name State
+extends Node
+# This is the base node used to pass functions to specific state nodes
+# it is not used in a scene
 
-#This is the base node used to pass functions to specific state nodes, it is not used in a scene
-
-signal Transitioned
+signal transitioned
 
 func state_enter():
 	#this will run once when the state is entered
