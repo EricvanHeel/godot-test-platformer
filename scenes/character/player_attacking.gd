@@ -1,20 +1,15 @@
+class_name PlayerAttacking
 extends State
-class_name player_attacking
 
-@export var actor : player
-@export var animation : AnimationPlayer
+@export var actor: Player
+@export var animation: AnimationPlayer
 
-
-func ready():
-	pass
-
-func state_enter():
+func state_enter() -> void:
 	animation.play("swing")
 	
-func state_process(delta):
+func state_process(delta: float) -> void:
 	if animation.is_playing() == false:
-		Transitioned.emit(self, "player_idle")
+		transitioned.emit(self, "PlayerIdle")
 
-func state_physics_process(delta):
+func state_physics_process(delta: float) -> void:
 	actor.velocity = Vector2.ZERO
-	pass

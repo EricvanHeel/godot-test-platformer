@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/character/character.gd" id="1_adr2u"]
 [ext_resource type="Texture2D" uid="uid://n0xm07oamu7n" path="res://assets/images/oak_woods_v1.0/character/char_blue.png" id="2_bf15v"]
-[ext_resource type="Script" path="res://General Scripts/FSM.gd" id="3_smeg0"]
+[ext_resource type="Script" path="res://common_scripts/finite_state_machine.gd" id="3_2ca6w"]
 [ext_resource type="Script" path="res://scenes/character/player_idle.gd" id="4_5s6hc"]
 [ext_resource type="Script" path="res://scenes/character/player_running.gd" id="5_3ebxh"]
 [ext_resource type="Script" path="res://scenes/character/player_jumping.gd" id="6_omtaf"]
@@ -193,7 +193,7 @@ _data = {
 "swing": SubResource("Animation_hms1y")
 }
 
-[node name="character" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "animation")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "animation")]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_adr2u")
@@ -218,30 +218,30 @@ libraries = {
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="FSM" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
-script = ExtResource("3_smeg0")
-initial_state = NodePath("player_idle")
+script = ExtResource("3_2ca6w")
+initial_state = NodePath("PlayerIdle")
 
-[node name="player_idle" type="Node" parent="FSM" node_paths=PackedStringArray("actor", "animation")]
+[node name="PlayerIdle" type="Node" parent="FSM" node_paths=PackedStringArray("actor", "animation")]
 script = ExtResource("4_5s6hc")
 actor = NodePath("../..")
 animation = NodePath("../../Sprite2D/AnimationPlayer")
 
-[node name="player_running" type="Node" parent="FSM" node_paths=PackedStringArray("actor", "animation")]
+[node name="PlayerRunning" type="Node" parent="FSM" node_paths=PackedStringArray("actor", "animation")]
 script = ExtResource("5_3ebxh")
 actor = NodePath("../..")
 animation = NodePath("../../Sprite2D/AnimationPlayer")
 
-[node name="player_jumping" type="Node" parent="FSM" node_paths=PackedStringArray("actor", "animation")]
+[node name="PlayerJumping" type="Node" parent="FSM" node_paths=PackedStringArray("actor", "animation")]
 script = ExtResource("6_omtaf")
 actor = NodePath("../..")
 animation = NodePath("../../Sprite2D/AnimationPlayer")
 
-[node name="player_falling" type="Node" parent="FSM" node_paths=PackedStringArray("actor", "animation")]
+[node name="PlayerFalling" type="Node" parent="FSM" node_paths=PackedStringArray("actor", "animation")]
 script = ExtResource("7_rpwys")
 actor = NodePath("../..")
 animation = NodePath("../../Sprite2D/AnimationPlayer")
 
-[node name="player_attacking" type="Node" parent="FSM" node_paths=PackedStringArray("actor", "animation")]
+[node name="PlayerAttacking" type="Node" parent="FSM" node_paths=PackedStringArray("actor", "animation")]
 script = ExtResource("8_mfpmx")
 actor = NodePath("../..")
 animation = NodePath("../../Sprite2D/AnimationPlayer")
