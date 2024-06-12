@@ -145,3 +145,34 @@ All variables, parameters and functions should have type annotations.
   - Function Parameters & Return types: 
 	- `func _process(delta: float) -> void:`
 	- `func add_two_numbers(first: int, second: int) -> int:`
+
+
+## Object Properties Glossary
+
+### Character
+| Property | Value |
+| -------- | ------- |
+| Z-Index | 4 |
+
+### Tavern Scene
+| Tile Map Layer | Z-Index |
+| -------- | ------- |
+| Floors & Walls | 0 |
+| Background 1 | 1 |
+| Background 2 | 2 |
+| Background 3 | 3 |
+| Middleground | 4 |
+| Foreground 1 | 5 |
+| Foreground 2 | 6 |
+| Borders | 7 |
+
+| Physics Layer | Collision Layer |
+| -------- | ------- |
+| 0 - Solid Platforms | 1 |
+| 1 - Droppable Platforms | 2 |
+
+### Bartender
+| Property | Value |
+| -------- | ------- |
+| Body Z-Index | 1 |
+| Arms Z-Index | 2 |

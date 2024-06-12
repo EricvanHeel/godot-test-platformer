@@ -6,7 +6,7 @@ const jump_velocity: float = 400
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @export var sprite: Sprite2D
-@export var animation: AnimationPlayer
+#@export var animation: AnimationPlayer
 @export var direction: Vector2 = Vector2.ZERO
 @export var saved_direction: Vector2
 
