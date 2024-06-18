@@ -154,6 +154,12 @@ All variables, parameters and functions should have type annotations.
 | -------- | ------- |
 | Z-Index | 4 |
 
+### All Tile Maps
+| Physics Layer | Collision Layer |
+| -------- | ------- |
+| 0 - Solid Platforms | 1 |
+| 1 - Droppable Platforms | 2 |
+
 ### Tavern Scene
 | Tile Map Layer | Z-Index |
 | -------- | ------- |
@@ -166,10 +172,11 @@ All variables, parameters and functions should have type annotations.
 | Foreground 2 | 6 |
 | Borders | 7 |
 
-| Physics Layer | Collision Layer |
+### Arena Scene
+| Tile Map Layer | Z-Index |
 | -------- | ------- |
-| 0 - Solid Platforms | 1 |
-| 1 - Droppable Platforms | 2 |
+| Floors & Walls | 0 |
+| Platforms | 1 |
 
 ### Bartender
 | Property | Value |
