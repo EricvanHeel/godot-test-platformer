@@ -14,3 +14,5 @@ func state_process(delta: float) -> void:
 		transitioned.emit(self,"PlayerAttacking")
 	if Input.is_action_just_pressed("jump"):
 		transitioned.emit(self,"PlayerJumping")
+	if actor.velocity.y > 150:
+		transitioned.emit(self, "PlayerFalling")

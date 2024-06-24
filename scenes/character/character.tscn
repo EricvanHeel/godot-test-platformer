@@ -215,8 +215,6 @@ libraries = {
 "": SubResource("AnimationLibrary_xcbi5")
 }
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="FSM" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_2ca6w")
 initial_state = NodePath("PlayerIdle")

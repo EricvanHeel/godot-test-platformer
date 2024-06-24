@@ -80,11 +80,9 @@ layer_1/name = "Platforms"
 layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array(327676, 0, 2, 458752, 0, 2, 327687, 0, 2, -327676, 0, 2, -65541, 0, 2, 196594, 0, 2, 327691, 131072, 2, 458754, 131072, 2, 327678, 131072, 2, 196601, 131072, 2, -327671, 131072, 2, -65537, 131072, 2, 458753, 65536, 2, 327677, 65536, 2, 327689, 65536, 2, 327688, 65536, 2, 327690, 65536, 2, 196595, 65536, 2, 196596, 65536, 2, 196597, 65536, 2, 196598, 65536, 2, 196599, 65536, 2, 196600, 65536, 2, -65540, 65536, 2, -65539, 65536, 2, -65538, 65536, 2, -327675, 65536, 2, -327674, 65536, 2, -327673, 65536, 2, -327672, 65536, 2)
 
-[node name="PlayerCamera" type="Camera2D" parent="." node_paths=PackedStringArray("tile_map", "player")]
-position = Vector2(-128, 176)
-script = ExtResource("4_bc1rv")
-tile_map = NodePath("../TileMap")
-player = NodePath("../Player")
-
 [node name="Player" parent="." instance=ExtResource("3_h2og8")]
 position = Vector2(-128, 176)
+
+[node name="PlayerCamera" type="Camera2D" parent="Player" node_paths=PackedStringArray("tile_map")]
+script = ExtResource("4_bc1rv")
+tile_map = NodePath("../../TileMap")

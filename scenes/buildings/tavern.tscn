@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbb7j7wjmc5ry"]
+[gd_scene load_steps=7 format=3 uid="uid://cbb7j7wjmc5ry"]
 
 [ext_resource type="Texture2D" uid="uid://b0ofi3ro5cg84" path="res://assets/images/tavern/tavern_background.png" id="1_nfq14"]
 [ext_resource type="Texture2D" uid="uid://caa1lbtfoah4m" path="res://assets/images/tavern/tavern_tile_set.png" id="2_2231a"]
+[ext_resource type="PackedScene" uid="uid://cfoa46hhkceac" path="res://scenes/character/character.tscn" id="3_3vrlq"]
+[ext_resource type="Script" path="res://scenes/character/player_camera.gd" id="4_ljy01"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sujc8"]
 texture = ExtResource("2_2231a")
@@ -882,3 +884,11 @@ layer_6/tile_data = PackedInt32Array(458760, 786434, 1, 458761, 851970, 1)
 layer_7/name = "Borders"
 layer_7/z_index = 7
 layer_7/tile_data = PackedInt32Array(-524288, 1048578, 0, -458752, 1048578, 1, -393216, 1048578, 2, -327680, 1048578, 3, -262144, 1048578, 4, -196608, 1048578, 5, -131072, 1048578, 6, -65536, 1048578, 7, 0, 1114114, 0, 65536, 1114114, 1, 131072, 1114114, 2, 196608, 1114114, 3, 262144, 1114114, 4, 458752, 589826, 3, 393216, 589826, 2, 327680, 589826, 1, -524259, 1048578, 65536, -458723, 1048578, 65537, -393187, 1048578, 65538, -327651, 1048578, 65539, -262115, 1048578, 65540, -196579, 1048578, 65541, -131043, 1048578, 65542, -65507, 1048578, 65543, 29, 1114114, 65536, 65565, 1114114, 65537, 131101, 1114114, 65538, 196637, 1114114, 65539, 262173, 1114114, 65540, 327709, 1114114, 65541, 393245, 1114114, 65542, 458781, 1114114, 65543)
+
+[node name="Player" parent="." instance=ExtResource("3_3vrlq")]
+position = Vector2(27, 97)
+
+[node name="PlayerCamera" type="Camera2D" parent="." node_paths=PackedStringArray("tile_map", "player")]
+script = ExtResource("4_ljy01")
+tile_map = NodePath("../TileMap")
+player = NodePath("../Player")
