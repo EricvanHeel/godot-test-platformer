@@ -1,9 +1,11 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://b2uqs7fgh8t67"]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://b2uqs7fgh8t67"]
 
 [ext_resource type="FontFile" uid="uid://bd0al6pmnh16b" path="res://assets/fonts/Greenscr.ttf" id="1_bin68"]
 [ext_resource type="Texture2D" uid="uid://dahngxw5r64d4" path="res://assets/images/gui/button_hover.png" id="2_783qt"]
 [ext_resource type="FontFile" uid="uid://wil4m60kxyu8" path="res://assets/fonts/Alagard.TTF" id="2_di6h1"]
 [ext_resource type="Texture2D" uid="uid://b1cgy5m5sjxjn" path="res://assets/images/gui/scene_menu.png" id="3_mo0tp"]
+[ext_resource type="Texture2D" uid="uid://t7r8kltbqf8y" path="res://assets/images/gui/v_scrollbar_grabber.png" id="5_3tkjg"]
+[ext_resource type="Texture2D" uid="uid://bn7ivyxv0gka" path="res://assets/images/gui/v_scrollbar.png" id="5_vqiwm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qg0y6"]
 
@@ -14,7 +16,7 @@ texture_margin_top = 2.0
 texture_margin_right = 2.0
 texture_margin_bottom = 2.0
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_plptt"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ss46"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rih0k"]
 texture = ExtResource("3_mo0tp")
@@ -23,6 +25,16 @@ texture_margin_top = 12.0
 texture_margin_right = 10.0
 texture_margin_bottom = 10.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_froig"]
+texture = ExtResource("5_3tkjg")
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qf618"]
+texture = ExtResource("5_vqiwm")
+texture_margin_left = 1.0
+texture_margin_right = 1.0
+
 [resource]
 Button/colors/font_color = Color(0.415686, 0.368627, 0.290196, 1)
 Button/colors/font_focus_color = Color(0.415686, 0.368627, 0.290196, 1)
@@ -30,8 +42,10 @@ Button/font_sizes/font_size = 12
 Button/fonts/font = ExtResource("1_bin68")
 Button/styles/focus = SubResource("StyleBoxEmpty_qg0y6")
 Button/styles/hover = SubResource("StyleBoxTexture_03w6y")
-Button/styles/normal = SubResource("StyleBoxEmpty_plptt")
+Button/styles/normal = SubResource("StyleBoxEmpty_8ss46")
 Button/styles/pressed = SubResource("StyleBoxTexture_03w6y")
+MarginContainer/constants/margin_left = 4
+MarginContainer/constants/margin_right = 4
 Panel/styles/panel = SubResource("StyleBoxTexture_rih0k")
 RichTextLabel/colors/default_color = Color(0.415686, 0.368627, 0.290196, 1)
 RichTextLabel/constants/shadow_offset_x = 2
@@ -40,3 +54,5 @@ RichTextLabel/font_sizes/mono_font_size = 16
 RichTextLabel/font_sizes/normal_font_size = 16
 RichTextLabel/fonts/mono_font = ExtResource("1_bin68")
 RichTextLabel/fonts/normal_font = ExtResource("2_di6h1")
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_froig")
+VScrollBar/styles/scroll = SubResource("StyleBoxTexture_qf618")
