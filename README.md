@@ -146,6 +146,12 @@ All variables, parameters and functions should have type annotations.
 	- `func _process(delta: float) -> void:`
 	- `func add_two_numbers(first: int, second: int) -> int:`
 
+## Scene Setup
+Each scene should have the following child nodes:
+- TileMap
+- Player
+- PlayerCamera
+  - Takes TileMap and Player as inputs
 
 ## Object Properties Glossary
 

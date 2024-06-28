@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cl8f3kbibhe00"
-path="res://.godot/imported/bartender.png-ce8324aaf78f7f5cf9fbe450625d4e1c.ctex"
+uid="uid://dahngxw5r64d4"
+path="res://.godot/imported/button_hover.png-0cf08a821f5f7e7c57c8037568467deb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/npc/bartender.png"
-dest_files=["res://.godot/imported/bartender.png-ce8324aaf78f7f5cf9fbe450625d4e1c.ctex"]
+source_file="res://assets/images/gui/button_hover.png"
+dest_files=["res://.godot/imported/button_hover.png-0cf08a821f5f7e7c57c8037568467deb.ctex"]
 
 [params]
 

@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://s1aamcj6ww5a"]
+
+[ext_resource type="Theme" uid="uid://b2uqs7fgh8t67" path="res://scenes/gui/main_theme.tres" id="1_rlgc8"]
+[ext_resource type="Script" path="res://scenes/gui/scene_menu.gd" id="2_6lbvi"]
+
+[node name="SceneMenu" type="Control" node_paths=PackedStringArray("button_template")]
+process_mode = 3
+z_index = 100
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 180.0
+theme = ExtResource("1_rlgc8")
+script = ExtResource("2_6lbvi")
+button_template = NodePath("ButtonTemplate")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+offset_right = 320.0
+offset_bottom = 180.0
+color = Color(0, 0, 0, 0.4)
+
+[node name="VBoxContainer" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 10.0
+offset_right = 230.0
+offset_bottom = 162.0
+
+[node name="SceneMenu" type="RichTextLabel" parent="."]
+layout_mode = 2
+offset_left = 105.0
+offset_top = 25.0
+offset_right = 228.0
+offset_bottom = 44.0
+bbcode_enabled = true
+text = "[center]Scene Menu[/center]"
+
+[node name="ButtonTemplate" type="Button" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 119.0
+offset_top = 50.0
+offset_right = 214.0
+offset_bottom = 70.0
