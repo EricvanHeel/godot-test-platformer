@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvl3uroqkam03"
-path="res://.godot/imported/bartender.png-e4bb2c63e159ab7940f0a243b104f975.ctex"
+uid="uid://b6q4gvs1ad6ns"
+path="res://.godot/imported/arena_tile_set.png-7d2327245ab55e8b19b69d7943904813.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/npc/bartender/bartender.png"
-dest_files=["res://.godot/imported/bartender.png-e4bb2c63e159ab7940f0a243b104f975.ctex"]
+source_file="res://assets/images/arena/arena_tile_set.png"
+dest_files=["res://.godot/imported/arena_tile_set.png-7d2327245ab55e8b19b69d7943904813.ctex"]
 
 [params]
 

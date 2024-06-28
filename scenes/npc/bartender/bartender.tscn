@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://b0gij2i1oqlm0"]
 
-[ext_resource type="Texture2D" uid="uid://cl8f3kbibhe00" path="res://assets/images/npc/bartender/bartender.png" id="1_cayx7"]
 [ext_resource type="Script" path="res://common_scripts/finite_state_machine.gd" id="2_3lw0m"]
+[ext_resource type="Texture2D" uid="uid://dvl3uroqkam03" path="res://assets/images/npc/bartender/bartender.png" id="2_dbove"]
 [ext_resource type="Script" path="res://scenes/npc/bartender/bartender_cleaning.gd" id="3_khe5w"]
 [ext_resource type="Script" path="res://scenes/npc/bartender/bartender_put_away.gd" id="4_f5e8u"]
 [ext_resource type="Script" path="res://scenes/npc/bartender/bartender_take_out.gd" id="5_an64d"]
@@ -147,13 +147,13 @@ _data = {
 
 [node name="BodySprite2D" type="Sprite2D" parent="."]
 z_index = 1
-texture = ExtResource("1_cayx7")
+texture = ExtResource("2_dbove")
 hframes = 4
 vframes = 8
 
 [node name="ArmsSprite2D" type="Sprite2D" parent="."]
 z_index = 2
-texture = ExtResource("1_cayx7")
+texture = ExtResource("2_dbove")
 hframes = 4
 vframes = 8
 frame = 5

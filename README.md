@@ -146,6 +146,12 @@ All variables, parameters and functions should have type annotations.
 	- `func _process(delta: float) -> void:`
 	- `func add_two_numbers(first: int, second: int) -> int:`
 
+## Scene Setup
+Each scene should have the following child nodes:
+- TileMap
+- Player
+- PlayerCamera
+  - Takes TileMap and Player as inputs
 
 ## Object Properties Glossary
 
@@ -153,6 +159,12 @@ All variables, parameters and functions should have type annotations.
 | Property | Value |
 | -------- | ------- |
 | Z-Index | 4 |
+
+### All Tile Maps
+| Physics Layer | Collision Layer |
+| -------- | ------- |
+| 0 - Solid Platforms | 1 |
+| 1 - Droppable Platforms | 2 |
 
 ### Tavern Scene
 | Tile Map Layer | Z-Index |
@@ -166,10 +178,11 @@ All variables, parameters and functions should have type annotations.
 | Foreground 2 | 6 |
 | Borders | 7 |
 
-| Physics Layer | Collision Layer |
+### Arena Scene
+| Tile Map Layer | Z-Index |
 | -------- | ------- |
-| 0 - Solid Platforms | 1 |
-| 1 - Droppable Platforms | 2 |
+| Floors & Walls | 0 |
+| Platforms | 1 |
 
 ### Bartender
 | Property | Value |
